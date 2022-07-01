@@ -1,0 +1,76 @@
+@media screen and (min-width: 767px) {
+    /* Heading highlight css */
+    
+    .about-wrapper .about-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0px !important;
+    }
+    
+    .about-wrapper .about-content-wrapper .about-us-head {
+        /* margin: 0 auto; */
+    }
+    
+    .about-wrapper .about-content-wrapper .about-us-head h1 {
+        font-weight: bold;
+        color: rgb(58, 105, 144);
+        margin-top: 20px;
+    }
+    
+    .about-wrapper .about-content-wrapper .why-use-head h1 {
+        font-weight: bold;
+        color: rgb(58, 105, 144);
+        margin-top: 100px;
+    }
+    
+    .about-wrapper .about-content-wrapper .how-to-use-head h1 {
+        font-weight: bold;
+        color: rgb(58, 105, 144);
+        margin-top: 50px;
+    }
+    
+    .about-wrapper .desc-highlight {
+        font-size: 18px;
+        text-align: justify;
+    }
+    
+    
+    /* Our Team css */
+    .about-wrapper .our-team-wrapper {
+        margin: 0 auto;
+    }
+    
+    .about-wrapper .our-team-wrapper h1{
+        font-weight: bold;
+        color: rgb(58, 105, 144);
+        margin-top: 50px;
+    
+    }
+
+    .about-wrapper .our-team-section{
+        width: 100%;
+        margin: auto;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .responsive-about {
+        flex-direction: column !important;
+    }
+
+    .about-wrapper .about-content-wrapper .col-6 {
+        margin: 0 auto;
+        width: 100% !important;
+        justify-content: center;
+    }
+
+    .about-wrapper .desc-highlight {
+        font-size: 18px;
+        text-align: justify;
+    }
+    
+    .about-wrapper .our-team-section .col {
+        width: 100% !important;
+    }
+}

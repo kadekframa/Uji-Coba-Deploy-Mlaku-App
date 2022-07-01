@@ -1,0 +1,33 @@
+footer {
+  background-color: #f0f7fe;
+  padding: 1px 0 0;
+}
+/* 
+footer .container {
+  display: flex;
+  flex-direction: column;
+  background-color: #2e5070;
+  padding-left: 94px;
+} */
+
+ul {
+  list-style: none;
+  padding-left: 0px !important;
+}
+.footer-wrapper a {
+  font-size: 18px;
+}
+.footer-wrapper p {
+  font-size: 18px;
+}
+.footer__bottom {
+  min-height: 50px;
+  background-color: #2a4865;
+  color: rgb(226, 226, 226);
+}
+
+@media screen and (max-width: 767px) {
+  .responsive-mobile {
+    flex-direction: column;
+  }
+}
