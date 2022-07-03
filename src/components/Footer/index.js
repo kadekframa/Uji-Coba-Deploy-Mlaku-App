@@ -8,14 +8,18 @@ const Footer = () => {
     <footer className='footer-wrapper'>
       <div className='container'>
         <div className='row responsive-mobile d-flex pt-5 pb-4 px-4 px-md-0'>
-          <div className='col'>
-            <img src={Logo} alt="Logo Mlaku" width='94px' />
-            <p>Semangat!</p>
+          <div className='col d-flex justify-content-center'>
+            <div>
+              <div className='d-flex justify-content-center'>
+                <img src={Logo} alt="Logo Mlaku" width='146px' />
+              </div>
+              <p className='mlaku-desc-footer mt-2 px-5'>Indonesia Tourism Exploration Information System</p>
+            </div>
           </div>
 
           <div className='col'>
             <div className='row mt-4 mt-md-0'>
-              <h5 className="mx-1">Our Service</h5>
+              <h5 className="mx-1 fw-bold">Our Service</h5>
               <ul>
                 <li className="nav-item mb-2 mx-3">
                   <Link className='nav-link p-0 text-muted' to="/object-tourism">Object Tourism</Link>
@@ -32,7 +36,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className='row mt-4 mt-md-0'>
-              <h5 className="mx-1">Sosial Media</h5>
+              <h5 className="mx-1 fw-bold">Sosial Media</h5>
               <ul>
                 <li className="nav-item mb-2 mx-3">
                   <a href="https://www.instagram.com/mlakutravel_id/" className='nav-link p-0 text-muted' target='blank' rel='noreferrer'><i class="fa fa-instagram text-danger"></i> Instagram</a>
@@ -50,7 +54,7 @@ const Footer = () => {
           <div className='col'>
             
             <div className='row mt-4 mt-md-0'>
-              <h5 className="mx-1">Help Center</h5>
+              <h5 className="mx-1 fw-bold">Help Center</h5>
               <ul>
                 <li className="nav-item mb-2 mx-3">
                   <p className='m-0 text-muted'><i className='fa fa-phone'></i> +62 0859 6411 6702 (Inaya)</p>
@@ -68,7 +72,7 @@ const Footer = () => {
             </div>
             
             <div className='row mt-4 mt-md-0'>
-              <h5 className="mx-1">Address</h5>
+              <h5 className="mx-1 fw-bold">Address</h5>
               <ul>
                 <li className="nav-item mb-2 mx-3">
                   <p className='m-0 text-muted'>
@@ -85,7 +89,7 @@ const Footer = () => {
       </div>
 
       <div className="footer__bottom d-flex text-center align-items-center justify-content-center">
-        &copy; 2022 <span className="mx-2"> Mlaku - Indonesia Tourism Exploration Information System</span>
+         <span className="mx-2">&copy; 2022 Mlaku - Indonesia Tourism Exploration Information System</span>
       </div>
     </footer>
   )

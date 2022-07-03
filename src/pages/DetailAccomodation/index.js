@@ -1,67 +1,67 @@
 import React, { useState, useEffect } from 'react';
-import { getDetailCulinary, deleteCulinary } from '../../utils/CulinaryHandler';
+import { getDetailAccomodation, deleteObjectTourism } from '../../utils/AccomodationHandler';
 import { Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
 import { useParams } from 'react-router-dom';
-import { actionButtonCreator } from '../../utils/templates/DetailsCulinaryHelper';
+import { actionButtonCreator } from '../../utils/templates/DetailsAccomodationHelper';
 import Gap from '../../components/atoms/Gap';
-import './detailCulinary.css'
+import './detailAccomodation.css'
 
 
-const DetailCulinary = (props) => {
-    const [Culinary, setCulinary] = useState({});
+const DetailAccomodation = (props) => {
+    const [Accomodation, setAccomodation] = useState({});
     const [user, setUser] = useState(null);
 
     const getParams = useParams();
 
     useEffect(() => {
-        getDetailCulinary(getParams.id)
+        getDetailAccomodation(getParams.id)
             .then(response => {
-                setCulinary(response.data);
+                setAccomodation(response.data);
             })
             .catch(err => {
                 console.info('error: ', err);
             });
 
-        if (props.user && Culinary) {
+        if (props.user && Accomodation) {
             setUser(props.user);
         }
-    }, [props, Culinary])
+    }, [props, Accomodation])
 
     let actionMenu;
-    if (Culinary) {
+    if (Accomodation) {
         if (user) {
-            if (user._id === Culinary.author.user_id) {
-                actionMenu = actionButtonCreator(Culinary);
+            if (user._id === Accomodation.author.user_id) {
+                actionMenu = actionButtonCreator(Accomodation);
             }
         }
 
         return (
-            <main className="container detail-wrapper-culinary">
+            <main className="container detail-wrapper-accomodation">
 
                 <div className="row justify-content-center">
                     <Gap height={40} />
-                    <div className="col-md-6 image-wrapper-culinary">
-                        <img src={`http://localhost:4000/${Culinary.image}`} alt="Culinary" className="image-culinary mb-3" />
+                    <div className="col-md-6 image-wrapper-accomodation">
+                        <img src={`http://localhost:4000/${Accomodation.image}`} alt="Image_Accomodation" className="image-accomodation mb-3" />
                     </div>
 
                     <div className="col-6 me-auto">
                         <Breadcrumb>
                             <BreadcrumbItem>
-                                Culinary
+                                Accomodation
                             </BreadcrumbItem>
-                            <BreadcrumbItem className='culinary_breadcrumb' active>
-                                {Culinary.culinary_name}
+                            <BreadcrumbItem className='accomodation_breadcrumb' active>
+                                {Accomodation.accomodation_name}
                             </BreadcrumbItem>
                         </Breadcrumb>
-                        <h1 className="mb-3">{Culinary.culinary_name}</h1>
+                        <h1 className="mb-3">{Accomodation.accomodation_name}</h1>
                         <h5 className="">Location:</h5>
-                        <p className=""><i>{Culinary.address}</i></p>
+                        <p className=""><i>{Accomodation.address}</i></p>
                         <h5 className="">Day Open:</h5>
-                        <p className=""><i>{Culinary.open_day}</i></p>
+                        <p className=""><i>{Accomodation.open_day}</i></p>
                         <h5 className="">Time Open:</h5>
-                        <p className=""><i>{Culinary.open_time}</i></p>
+                        <p className=""><i>{Accomodation.open_time}</i></p>
                         <h5 className="">Contact Number:</h5>
-                        <p className=""><i>{Culinary.contact_number}</i></p>
+                        <p className=""><i>{Accomodation.contact_number}</i></p>
 
 
                     </div>
@@ -70,8 +70,8 @@ const DetailCulinary = (props) => {
 
                 <div className='col m-1'>
                     <h3 className='mb-4 my-2'>Information</h3>
-                    <p className="information-culinary-desc">
-                        {Culinary.desc}
+                    <p className="information-accomodation-desc">
+                        {Accomodation.desc}
                     </p>
                 </div>
 
@@ -89,4 +89,4 @@ const DetailCulinary = (props) => {
 
 }
 
-export default DetailCulinary;
+export default DetailAccomodation;

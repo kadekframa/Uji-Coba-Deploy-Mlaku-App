@@ -1,110 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,500&display=swap');
+@media screen and (max-width: 576px) {
+    .accomodation-hero-wrapper {
+        flex-direction: column-reverse;
+    }
 
+    .accomodation-hero-wrapper .accomodation-hero-img {
+        max-width: 80%;
+        height: 400px;
+        object-fit: cover;
+        margin-bottom: 30px;
+        margin-left: 30px;
+    }
 
-  .hero_title {
-    font-family: 'Roboto Flex', sans-serif;
-    position: absolute;
-    width: 544px;
-    height: 128px;
-    left: 144px;
-    top: 180px;
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 64px;
-  }
-
-  .hero_tagline {
-   position: absolute;
-width: 544px;
-height: 72px;
-left: 752px;
-top: 208px;
-font-family: 'Roboto Flex';
-font-weight: 500;
-font-size: 16px;
-line-height: 24px;
-color: grey;
-  }
-
-.main {
-  width: 100%;
-  margin: 0 auto;
-}
-
-
-.barContainerAccomodation {
-  display: inline-flex;
-  min-height: 100vh;
-}
-
-/**/
-.containerCardAccommodation {
-  margin-top: -370px;
-  margin-left: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  position: relative;
-}
-
-.containerCardAccommodation .boxAccommodation {
-  width: 373.33px;
-  height: 400px;
-  line-height: 1.5;
-  color: #fff;
-  display: flex;
-  border-radius: 8px;
-  /* untuk 3 card */
-  margin-right: 40px;
-  transition: all .5s; 
-}
-
-
-.boxAccommodation {
-  background-image: url('../../assets/images/century\ park.jpg');
-  width: 200px;
-  height: 300px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  box-shadow: 0 10px 20px rgba(0,0,0,.7);
-  border-radius: 8px;
-}
-
-.boxAccommodation h1 {
-  font-size: 20px;
-}
-
-.boxAccommodation p{
-  font-size: 12px;
-}
-
-.boxAccommodation:hover {
-  transform: translateY(20px);
-}
-
-.textAccommodation {
-  background-color: rgba(0,0,0,.6);
-  opacity: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 10px;
-  text-align: center;
-  border-radius: 8px;
-  transition: all .5s;
-}
-
-.textAccommodation:hover {
-  opacity: 1;
-}
-
-.two{
-  background-image: url('../../assets/images/hoteltentram.jpg');
-}
-.three {
-  background-image: url('../../assets/images/pacifichotel.jpg');
 }

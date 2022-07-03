@@ -3,6 +3,7 @@ import { getDetailObjectTourism, deleteObjectTourism } from '../../utils/ObjectT
 import { Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
 import { useParams } from 'react-router-dom';
 import { actionButtonCreator } from '../../utils/templates/DetailsObjectTourismHelper';
+import Gap from '../../components/atoms/Gap';
 import './detailObjectTourism.css'
 
 
@@ -38,7 +39,7 @@ const DetailObjectTourism = (props) => {
       <main className="container detail-wrapper">
 
         <div className="row justify-content-center">
-
+          <Gap height={40} />
           <div className="col-md-6 image-wrapper">
             <img src={`http://localhost:4000/${ObjectTourism.image}`} alt="Image_Tourism" className="image-object-tourism mb-3" />
           </div>
@@ -46,16 +47,20 @@ const DetailObjectTourism = (props) => {
           <div className="col-6 me-auto">
             <Breadcrumb>
               <BreadcrumbItem>
-                Yogyakarta
+                Object Tourism
               </BreadcrumbItem>
               <BreadcrumbItem className='object_tourism_breadcrumb' active>
                 {ObjectTourism.dest_name}
               </BreadcrumbItem>
             </Breadcrumb>
             <h1 className="mb-3">{ObjectTourism.dest_name}</h1>
+            <h5 className="">Location:</h5>
             <p className=""><i>{ObjectTourism.address}</i></p>
+            <h5 className="">Time Open:</h5>
             <p className=""><i>{ObjectTourism.open_day}</i></p>
+            <h5 className="">Day Open:</h5>
             <p className=""><i>{ObjectTourism.open_time}</i></p>
+            <h5 className="">Contact Number:</h5>
             <p className=""><i>{ObjectTourism.contact_number}</i></p>
 
 
@@ -73,7 +78,7 @@ const DetailObjectTourism = (props) => {
         <div col m-1>
           {actionMenu}
         </div>
-
+        <Gap height={20} />
       </main>
     )
   } else {

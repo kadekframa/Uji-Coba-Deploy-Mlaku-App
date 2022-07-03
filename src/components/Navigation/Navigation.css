@@ -1,9 +1,10 @@
-/* .navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(245, 245, 245, 0.192);
-} */
+.navbar {
+    font-family: 'Varela Round', sans-serif;
+}
+
+.navbar .logo-text {
+    color: rgb(67, 79, 88);
+}
 
 .nav-link {
     font-size: 17px;
@@ -86,5 +87,9 @@
     
     .user-profile-setting {
         margin-right: 0px;
+    }
+
+    .item-navigation-wrapper .nav-link {
+        padding: .8rem 1rem;
     }
   }

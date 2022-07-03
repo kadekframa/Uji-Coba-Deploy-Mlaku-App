@@ -1,50 +1,59 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Accommodation.css';
-import Input from '../../components/atoms/search-bar';
-import Button from '../../components/atoms/Add-Button';
+import { getAllAccomodation } from '../../utils/AccomodationHandler';
+import { createAccomodationList, addAccomodationButtonCreator } from '../../utils/templates/AccomodationListHelper';
+import { accomodationIllustration } from '../../assets'
+import Gap from '../../components/atoms/Gap';
 
-const Accommodation = () => {
+const Accomodation = (props) => {
+  const [dataAccomodation, setDataAccomodation] = useState([]);
+
+  useEffect(() => {
+    getAllAccomodation()
+      .then(response => {
+        setDataAccomodation(response.data);
+      })
+  })
+
+  let addAccomodationButton;
+  if (props.user) {
+    addAccomodationButton = addAccomodationButtonCreator();
+
+  }
+  const accomodationList = createAccomodationList(dataAccomodation);
+
   return (
-    <div className='main'>
-
-      <div className='hero_text'>
-        <h1 className='hero_title'>Temukan Penginapan di seluruh Indonesia</h1>
-        <p className='hero_tagline'>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
-          officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-      </div>
-
-      <div className='barContainerAccomodation'>
-
-        <Input placeholder="Search.." type="text" />
-        <Button children="Tambah" />
-
-      </div>
-
-      <div className='containerCardAccommodation'>
-
-        <div className='boxAccommodation'>
-          <div className='textAccommodation'>
-            <h1>Hotel Century</h1>
-            <p>Jakarta</p>
+    <main className='container accomodation-wrapper'>
+      <section id="accomodationHero">
+        <div className="container">
+          <div className="row accomodation-hero-wrapper mt-4 justify-content-between">
+            <div className="col-md-5">
+              <img className='img-fluid accomodation-hero-img' src={accomodationIllustration} alt="Accomodation Ilustrasi" />
+            </div>
+            <div className="col-md-7 pe-3 d-flex flex-column justify-content-center">
+              <h1 className='fw-bold'>Temukan Accomodation Favoritmu Hanya Disini </h1>
+              <p className='text-secondary'>"Berpergian dengan ditemani orang-orang yang kita cintai adalah sebuah rumah yang bergerak." <strong> Leigh Hunt </strong> </p>
+            </div>
           </div>
         </div>
+      </section>
+      <Gap height={40} />
 
-        <div className='boxAccommodation two'>
-          <div className='textAccommodation'>
-            <h1>Hotel Tentrem</h1>
-            <p>Semarang</p>
-          </div>
+      <section id='accomodationWrapper'>
+        <div className='text-center mb-4'>
+          <h1 className='fw-bold'>Accomodation</h1>
         </div>
 
-        <div className='boxAccommodation three'>
-          <div className='textAccommodation'>
-            <h1>Pacific Palace Hotel</h1>
-            <p>Batam</p>
-          </div>
+        <div className='d-flex justify-content-end mb-4'>
+          {addAccomodationButton}
         </div>
-      </div>
-    </div >
+
+        <div className='row'>
+          {accomodationList}
+        </div>
+      </section>
+    </main>
   )
 }
 
-export default Accommodation;
+export default Accomodation;
