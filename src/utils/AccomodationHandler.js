@@ -58,7 +58,7 @@ const createAccomodation = (dataAccomodation) => {
 }
 
 const getAllAccomodation = async () => {
-  const response = await Axios.get('http://localhost:4000/v1/accomodation/');
+  const response = await Axios.get('https://mlaku-api.herokuapp.com/v1/accomodation/');
   return response.data;
 }
 const getDetailAccomodation = async (id) => {
